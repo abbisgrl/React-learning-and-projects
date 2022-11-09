@@ -1,3 +1,8 @@
+.App{
+  padding-left: 3%;
+  padding-top: 2%;
+}
+
 input {
   border: 2px solid dimgray;
   font-family: cursive;
@@ -7,7 +12,7 @@ input {
 
 .inputContainer{
   height: 40px;
-  width: 100%;
+  width: 92%;
   padding: 3%;
   border: 1px solid black;
   display: flex;
@@ -15,6 +20,28 @@ input {
   text-align: center;
 }
 
+#main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#playback{
+  width: 30%;
+}
+#videolist{
+  width: 50%;
+  align-self: flex-end;
+}
+#videoItems{
+  display: flex;
+  flex-direction: row;
+  width: 96%;
+  border: 1px solid black;
+}
+
+#title{
+  align-self: center;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

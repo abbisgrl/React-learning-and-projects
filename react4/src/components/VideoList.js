@@ -1,5 +1,5 @@
 import React from "react";
-// import VideoItems from "./VideoItems";
+import VideoItems from "./VideoItems";
 
 class VideoList extends React.Component {
     constructor(props) {
@@ -10,20 +10,11 @@ class VideoList extends React.Component {
     render() {
         return (
             <div>
-                {console.log(this.props.data)}
-                {/* {this.props.data.items.map((videos)=>{
-                    return <img src={videos.snippet.thumbnails.high.url}/>
-                })} */}
-                {this.props.data.items.map((videos) => {
-                    return (
-                        <div className="videoContainer">
-                            <iframe width="420" height="315"
-                                src={`https://www.youtube.com/embed?v=${videos.id.videoId}`}>
-                            </iframe>
-                        </div>
-                    )
+                {/* {console.log(this.props.data)} */}
+                <h4>{`Latest videos of ${this.props.title} is here...`}</h4>
+                {this.props.data.map((video) => {
+                    return <VideoItems video={video} videoSelect={this.props.videoSelect}/>
                 })}
-                {/* <VideoItems/> */}
             </div>
         )
     }
