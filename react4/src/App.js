@@ -10,9 +10,12 @@ class App extends React.Component {
     this.state = {
       data: {},
       selectedVideo: {},
-      title:''
+      title: ''
     }
   }
+  // componentDidMount(){
+  //   this.onSearchSubmit('Welcome')
+  // }
   onSearchSubmit = async (item) => {
     const result = await youtube.get('/search', {
       params: {
@@ -22,9 +25,9 @@ class App extends React.Component {
 
     this.setState({
       data: result.data.items,
-      title:item
+      title: item,
+      selectedVideo: result.data.items[0]
     })
-    // console.log(item);
   }
 
   onVideoSelect = (video) => {
@@ -43,7 +46,7 @@ class App extends React.Component {
             {Object.keys(this.state.selectedVideo).length !== 0 ? <Playback selectedVideo={this.state.selectedVideo} /> : 'Loading...'}
           </div>
           <div id='videolist'>
-            {Object.keys(this.state.data).length !== 0 ? <VideoList data={this.state.data} videoSelect={this.onVideoSelect} title={this.state.title}/> : 'Search...'}
+            {Object.keys(this.state.data).length !== 0 ? <VideoList data={this.state.data} videoSelect={this.onVideoSelect} title={this.state.title} /> : 'Search...'}
           </div>
         </div>
       </div>

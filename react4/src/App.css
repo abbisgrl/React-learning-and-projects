@@ -26,21 +26,28 @@ input {
   justify-content: space-between;
 }
 #playback{
-  width: 30%;
+  width: 60%;
+  height: 50%;
 }
 #videolist{
-  width: 50%;
+  width: 30%;
   align-self: flex-end;
 }
 #videoItems{
   display: flex;
   flex-direction: row;
   width: 96%;
+  margin-bottom: 4px;
   border: 1px solid black;
+}
+#image{
+  width: 80%;
+  /* height: 100%; */
 }
 
 #title{
   align-self: center;
+  font-size: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
