@@ -1,0 +1,87 @@
+#name {
+  position: absolute;
+  left: 48%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+/* forms styling  */
+#form {
+  display: flex;
+  position: absolute;
+  left: 25%;
+  top: 5%;
+  flex-direction: column;
+  width: 50%;
+  align-content: space-between;
+  padding: 2%;
+  -webkit-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+  box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+}
+
+#form label {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+#form button {
+  background-color: red;
+  border-radius: 10%;
+  margin-top: 2px;
+}
+
+/*task container*/
+#taskContainer {
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  flex-direction: column;
+  width: 50%;
+  align-content: space-between;
+  padding: 2%;
+  -webkit-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+  box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+}
+
+#task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid grey;
+  border-radius: 10%;
+  padding: 1%;
+}
+#task button{
+  border-radius: 22%;
+  background-color: limegreen;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
