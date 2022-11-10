@@ -50,8 +50,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <div id='name'>TODO LIST</div>
-        <Form task={this.addTask} />
-        <TaskContainer list={this.state.list} delete={this.removeTask} complete={this.handleStatus} edit={this.editTask} />
+        <Form addTask={this.addTask} />
+        <TaskContainer list={this.state.list} remove={this.removeTask} status={this.handleStatus} edit={this.editTask} />
       </div>
     );
   }

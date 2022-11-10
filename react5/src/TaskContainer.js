@@ -8,16 +8,13 @@ class TaskContainer extends React.Component {
             done: false,
         }
     }
-    handleClick = (index) => {
-        this.props.delete(index);
+    handleRemove = (index) => {
+        this.props.remove(index);
     }
 
     handleStatus = (index) => {
-        this.props.complete(index);
+        this.props.status(index);
     }
-    // getEdit = (index, task, date) => {
-    //     this.props.edit(index, task, date)
-    // }
     render() {
         if (this.props.list.length === 0) {
             return (<div id="taskContainer" className="example">
@@ -34,8 +31,8 @@ class TaskContainer extends React.Component {
                                 {item.status ? <div className="textDecoration"><div>{item.task}</div>
                                     <div>{item.date}</div></div> : <div><div>{item.task}</div>
                                     <div>{item.date}</div></div>}
-                                <button onClick={() => { this.handleClick(index) }} style={{ backgroundColor: 'red', fontWeight: '700' }}>Delete</button>
-                                <EditPop data={this.props.edit} index={index} />
+                                <button onClick={() => { this.handleRemove(index) }} style={{ backgroundColor: 'red', fontWeight: '700' }}>Delete</button>
+                                <EditPop edit={this.props.edit} index={index} />
                                 <button onClick={() => { this.handleStatus(index) }} style={{ backgroundColor: 'green', fontWeight: '700' }}>{item.status ? 'Uncomplete' : 'Complete'}</button>
 
                             </div>

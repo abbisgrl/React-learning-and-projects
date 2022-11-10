@@ -16,7 +16,7 @@ class Form extends React.Component {
             date: this.state.date,
             status: false
         }
-        this.props.task(task);
+        this.props.addTask(task);
     }
     render() {
         return (
