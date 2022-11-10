@@ -69,6 +69,8 @@
 
 .textDecoration {
   text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 10%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
