@@ -4,31 +4,56 @@ import Form from './Form';
 import TaskContainer from './TaskContainer';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state ={
-      list:[]
+    this.state = {
+      list: []
     }
   }
 
-  addTask = (task)=>{
+  addTask = (task) => {
     this.setState({
-      list:[...this.state.list,task]
+      list: [...this.state.list, task]
     })
   }
 
-  removeTask = (task)=>{
-    const newArray = this.state.list.filter((item,index)=>index!==task);
+  removeTask = (task) => {
+    const newArray = this.state.list.filter((item, index) => index !== task);
     this.setState({
-      list:newArray
+      list: newArray
+    })
+  }
+
+  editTask = (taskIndex, editTask, date) => {
+    this.state.list.forEach((item, index) => {
+      if (index === taskIndex) {
+        item.task = editTask;
+        item.date = date;
+      }
+    })
+    this.setState({
+      list: this.state.list
+    })
+    console.log(taskIndex, editTask, date);
+
+  }
+
+  handleStatus = (task) => {
+    this.state.list.forEach((item, index) => {
+      if (index === task) {
+        item.status = !item.status;
+      }
+    })
+    this.setState({
+      list: this.state.list
     })
   }
   render() {
     return (
       <div className="App">
         <div id='name'>TODO LIST</div>
-        <Form task={this.addTask}/>
-        <TaskContainer list={this.state.list} complete={this.removeTask}/>
+        <Form task={this.addTask} />
+        <TaskContainer list={this.state.list} delete={this.removeTask} complete={this.handleStatus} edit={this.editTask} />
       </div>
     );
   }

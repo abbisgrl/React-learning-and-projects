@@ -1,3 +1,7 @@
+.example::-webkit-scrollbar {
+  display: none;
+}
+
 #name {
   position: absolute;
   left: 48%;
@@ -18,12 +22,17 @@
   box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
 }
 
+#taskContainer{
+  font-weight: 800;
+  text-align: center;
+}
+
 #form label {
   font-family: "Times New Roman", Times, serif;
   font-weight: 700;
 }
 #form button {
-  background-color: red;
+  background-color: Yellow;
   border-radius: 10%;
   margin-top: 2px;
 }
@@ -36,11 +45,13 @@
   left: 25%;
   flex-direction: column;
   width: 50%;
+  height: 270px;
   align-content: space-between;
   padding: 2%;
   -webkit-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
   -moz-box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
   box-shadow: 1px 7px 54px -9px rgba(0, 0, 0, 1);
+  overflow: scroll;
 }
 
 #task {
@@ -51,11 +62,14 @@
   border-radius: 10%;
   padding: 1%;
 }
-#task button{
+#task button {
   border-radius: 22%;
-  background-color: limegreen;
+  /* background-color: limegreen; */
 }
 
+.textDecoration {
+  text-decoration: line-through;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

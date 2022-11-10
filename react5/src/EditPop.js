@@ -1,6 +1,8 @@
 import React from "react";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
-class Form extends React.Component {
+class EditPop extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -8,29 +10,25 @@ class Form extends React.Component {
             date: '',
         }
     }
-
-    handleForm = (e) => {
+    editSubmit = (e) => {
         e.preventDefault();
-        const task = {
-            task: this.state.task,
-            date: this.state.date,
-            status: false
-        }
-        this.props.task(task);
+        this.props.data(this.props.index, this.state.task, this.state.date)
+        console.log(this.state.task, this.state.date)
     }
     render() {
         return (
-            <div id="formContainer">
-                <form onSubmit={this.handleForm} id="form">
+            <Popup trigger={<button>Edit</button>}
+                position="right center">
+                <form onSubmit={this.editSubmit} id="form" style={{ backgroundColor: 'grey' }}>
                     <label htmlFor="task">Task</label>
                     <input type='text' id="task" value={this.state.task} onChange={(e) => this.setState({ task: e.target.value })} />
                     <label htmlFor="date">Date</label>
                     <input type='date' id="date" value={this.state.date} onChange={(e) => this.setState({ date: e.target.value })} />
-                    <button id="Add Task">Add Task</button>
+                    <button id="Add Task">Edit Task</button>
                 </form>
-            </div>
+            </Popup>
         )
     }
 }
 
-export default Form;
+export default EditPop;
