@@ -34,8 +34,6 @@ class App extends React.Component {
     this.setState({
       list: this.state.list
     })
-    console.log(taskIndex, editTask, date);
-
   }
 
   handleStatus = (task) => {

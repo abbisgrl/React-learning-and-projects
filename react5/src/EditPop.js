@@ -13,7 +13,6 @@ class EditPop extends React.Component {
     editSubmit = (e) => {
         e.preventDefault();
         this.props.data(this.props.index, this.state.task, this.state.date)
-        console.log(this.state.task, this.state.date)
     }
     render() {
         return (
