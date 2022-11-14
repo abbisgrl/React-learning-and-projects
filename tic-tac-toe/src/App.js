@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import TicTacToe from './TicTacToe';
-
+import Input from './Input';
+import './Board.css';
 class App extends React.Component {
   constructor() {
     super();
@@ -13,9 +14,18 @@ class App extends React.Component {
       ],
       player1: true,
       isGameOver: false,
-      winnerName: ''
+      winnerName: '',
+      player1Name: '',
+      player2Name: ''
     }
+  }
 
+  handlePlayers = (player1, player2) => {
+    console.log(player1, player2)
+    this.setState({
+      player1Name: player1,
+      player2Name: player2
+    })
   }
 
   handleRecord = (symbol, row, cell) => {
@@ -27,9 +37,24 @@ class App extends React.Component {
     })
   }
 
+  handleRestart = () => {
+    const array = [
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]
+    // const array =[]
+    this.setState({
+      record: array
+    });
+    console.log('hello')
+  }
+
   changeGameStatus = (status) => {
     if (!this.state.isGameOver) {
-      this.setState({ isGameOver: status })
+      this.setState({
+        isGameOver: status
+      })
     }
   }
 
@@ -96,11 +121,11 @@ class App extends React.Component {
       console.log('line', this.state.isGameOver);
       if (this.state.player1) {
         this.setState({
-          winnerName: 'Player 2 is winner'
+          winnerName: this.state.player2Name
         })
       } else {
         this.setState({
-          winnerName: 'Player 1 is winner'
+          winnerName: this.state.player1Name
         })
       }
     }
@@ -109,9 +134,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <TicTacToe handleRecord={this.handleRecord} player1={this.state.player1} winner={this.state.winner} />
-        {console.log(this.state.isGameOver)}
-        <h1>{this.state.isGameOver ? this.state.winnerName : 'Game is on'}</h1>
+        <Input handlePlayers={this.handlePlayers} />
+        {this.state.player1Name && this.state.player2Name ?
+          <div>
+            <TicTacToe handleRecord={this.handleRecord} player1={this.state.player1} handleRestart={this.handleRestart} />
+            {this.state.isGameOver ? <h1 id='winnerTag' style={{ left: "33%" }}> {`Congratulation ${this.state.winnerName}`} </h1> : <h1 id='winnerTag'>GAME ON</h1>}
+          </div>
+          : <h1 id='winnerTag' style={{ left: "40%" }}>Enter Players Name</h1>}
+        <button onClick={this.handleRestart}>New Game</button>
       </div>
     );
   }

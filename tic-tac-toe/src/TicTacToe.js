@@ -1,5 +1,5 @@
 import React from "react";
-import './Board.css';
+
 class TicTacToe extends React.Component {
     handleClick = (e, row, cellNo) => {
         if (this.props.player1) {
@@ -12,7 +12,6 @@ class TicTacToe extends React.Component {
             this.props.handleRecord('0', row, cellNo);
         }
     }
-
     render() {
         return (
             <>
