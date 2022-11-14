@@ -18,7 +18,7 @@
 // this.state={}
 // }
 
-//2.getDerivedStateFromProps is a method is which just called before render function and it is used when the state of component is depend on the props of the other component
+//2.getDerivedStateFromProps is a method in which just called before render function and it is used when the state of component is depend on the props of the other component
 
 //3.componentDidMount is a method which is just called after the render function and this is best place for api calling or loading the data.It called only once in whole life of the component 
 //      componentDidMount(){}
@@ -46,7 +46,7 @@
         //         }
         // }
         
-//7.componentWillUnmount() is the method which is used when you want to clean up the dom after completion of work of the component .It is run just after componentDidUpdate and it is very important for clean unnecesary element after using
+//7.componentWillUnmount() is the method which is used when you want to clean up the dom after completion of work of the component .It is run just after componentDidUpdate and it is very important for clean unnecesary element after using it
         // componentWillUnmount(){
         //         console.log("componentWillUnmount was called here!");
         //         window.removeEventListener("restart");
@@ -94,6 +94,19 @@
 //the second argument is used to configure the api request
 //inside the second object ,there are lot of things we can give to the api 
 
+
+//Farword ref 
+//When you want to give a ref for the element of child component in parent component then you can used the farward ref feature.
+//First create the ref with this.createRef = React.createRef()  and then you just passed that ref to the child component
+//after that create the child component with function const FRInput = React.forwardRef((props, ref) => {} and then pass the ref to the element who you want to set the ref
+
+
+//Error boundary 
+//In error if any error happen and we didn't handle it in a proper way then it will crash the website and show the error to the user
+//To handle the error in a gracefully manner then we will use the Error boundary concept
+//We wrap the component for which we want to handle the error from Error boundary Component and when ever there is any error throw Error boundary will catch it and then we can handle it 
+//There are two life cycle methods are used to handle those which getDerivedStateFromError() which will take the error and according to that we will give a fallback ui 
+//On the other hand to print the error ,componentDidCatch() is used  and it takes two parameter which are error and error info
 
 
 // Doubts  

@@ -13,9 +13,7 @@ class App extends React.Component {
       title: ''
     }
   }
-  // componentDidMount(){
-  //   this.onSearchSubmit('Welcome')
-  // }
+  
   onSearchSubmit = async (item) => {
     const result = await youtube.get('/search', {
       params: {
