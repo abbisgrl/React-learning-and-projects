@@ -3,6 +3,8 @@
 //React does not know how to render the boolean,undefined,null,obj,array of javascript through jsx
 //Class component have lifecycle method and it have state .On the other hand function component does not have lifecycle methods and state system.But now using hooks ,we can used all the methods of class component in function component
 
+const { useRef } = require("react");
+
 
 //component life cycle methods
 //constructor ,component will mount ,render ,component did mount for mount phase 
@@ -39,18 +41,18 @@
 // }
 
 //6.componentDidUpdate() it is a method which always run after shouldComponentUpdate() and when any component is update .It takes three parameter prevProps,prevState and snapshot .
-        // componentDidUpdate(prevProps, prevState, snapshot) {
-        //         console.log("componentDidUpdate was called here!");
-        //         if (snapshot.lastVehicle) {
-        //                 return <div> No cars left! </div>
-        //         }
-        // }
-        
+// componentDidUpdate(prevProps, prevState, snapshot) {
+//         console.log("componentDidUpdate was called here!");
+//         if (snapshot.lastVehicle) {
+//                 return <div> No cars left! </div>
+//         }
+// }
+
 //7.componentWillUnmount() is the method which is used when you want to clean up the dom after completion of work of the component .It is run just after componentDidUpdate and it is very important for clean unnecesary element after using it
-        // componentWillUnmount(){
-        //         console.log("componentWillUnmount was called here!");
-        //         window.removeEventListener("restart");
-        // }
+// componentWillUnmount(){
+//         console.log("componentWillUnmount was called here!");
+//         window.removeEventListener("restart");
+// }
 
 //States in react js class component
 //for creating the state in class component the syntax which is used for -  this.state = {} inside object we can write the state initial values
@@ -59,20 +61,20 @@
 
 //There are two ways of handling the input .One way is called controlled way and other is called uncontrolled way 
 
-    // updateState(value) {
-    //     this.setState({
-    //         value: value
-    //     })
-    // }
+// updateState(value) {
+//     this.setState({
+//         value: value
+//     })
+// }
 
-    //if you want to set the value of props into the state the you have to do it inside the component did update section
-    // componentDidUpdate(prevProps) {
-    //     const { value } = this.props;
-    //     if (prevProps.value !== value) {
-    //         this.updateState(value)
-    //     }
-    // }
-    
+//if you want to set the value of props into the state the you have to do it inside the component did update section
+// componentDidUpdate(prevProps) {
+//     const { value } = this.props;
+//     if (prevProps.value !== value) {
+//         this.updateState(value)
+//     }
+// }
+
 //axios is normally used over fetch because it is to used and it require less coding 
 
 //axios -
@@ -111,3 +113,38 @@
 
 // Doubts  
 // issue in api fetch
+
+
+//Notes on function component
+//1.function component can be written in two ways one is arrow function and other is normal function.
+//2.The methods of class component like state,lifecycle methods are impolement in functional component through hooks 
+//3.useState is used to create state in function component and there are two things in this.One is the variable and other is the function to set the value of that first variable
+//4.useEffect is used to implement the life cycle methods of class component in function component.
+//component Did Mount is implement using useEffect in this way and it is called only once after first render of component
+// useEffect(() => {
+//   first
+// }, [])
+
+//what ever you give in the second parameter array ,it will run once it will update
+//component did update is implement
+// useEffect(() => {
+//   First
+// }, [third])
+
+//when you want to unmount the component or any elements of the component from dom then this method will used 
+//component will unmount is implement
+// useEffect(() => {
+//         first
+//         return () => {
+//                 second
+//         }
+// }, [third])
+
+
+// 5.To use ref in function component ,there is hook called useRef()
+// const inputRef = useRef()
+// give the ref value to the any element for which you want to manupulate directly
+
+//Important point to note
+//1.We have to create any function in function component with any declaration keyword
+
