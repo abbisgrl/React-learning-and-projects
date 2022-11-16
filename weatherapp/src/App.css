@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+#mainBox {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 15%;
+  align-content: space-between;
+  row-gap: 18%;
+  border-radius:15%;
+  padding:2%;
+}
+#current {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 35%;
+  flex-wrap: wrap;
+}
+#current img{
+  width: 32%;
+  height: 100%;
+}
+#details{
+  text-align: left;
+  line-height: 15px;
+}
+
+#forecast{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#futureBox{
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted red;
+  border-radius: 30%;
+  margin: 2px;
+  padding: 5px;
+}
+
+#futureBox img{
+  width: 45%;
+  height: 100%;
+  align-self: center;
+}
