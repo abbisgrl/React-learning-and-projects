@@ -8,6 +8,7 @@
   width: 36%;
   height: 40%;
   border: 2px solid black;
+  background-color: lightgray;
 }
 
 .input {
@@ -21,6 +22,13 @@
   font-weight: 800;
   text-align: center;
 }
+.circle {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+  color: red;
+}
+
 
 #formContainer {
   display: flex;
@@ -36,4 +44,10 @@
   position: absolute;
   top: 30%;
   left: 43%;
+}
+
+#restartButton{
+  position: absolute;
+  left: 48%;
+  top: 25%;
 }

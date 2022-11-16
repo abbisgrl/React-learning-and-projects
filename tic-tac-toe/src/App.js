@@ -18,6 +18,7 @@ class App extends React.Component {
       player1Name: '',
       player2Name: ''
     }
+    this.inputRef = React.createRef();
   }
 
   handlePlayers = (player1, player2) => {
@@ -45,9 +46,14 @@ class App extends React.Component {
     ]
     // const array =[]
     this.setState({
-      record: array
+      record: array,
+      winnerName: '',
+      player1Name: '',
+      player2Name: '',
+      player1: true,
+      isGameOver: false,
     });
-    console.log('hello')
+    this.inputRef.current.value = '';
   }
 
   changeGameStatus = (status) => {
@@ -134,14 +140,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Input handlePlayers={this.handlePlayers} />
+        <Input handlePlayers={this.handlePlayers} ref={this.inputRef} />
         {this.state.player1Name && this.state.player2Name ?
           <div>
             <TicTacToe handleRecord={this.handleRecord} player1={this.state.player1} handleRestart={this.handleRestart} />
             {this.state.isGameOver ? <h1 id='winnerTag' style={{ left: "33%" }}> {`Congratulation ${this.state.winnerName}`} </h1> : <h1 id='winnerTag'>GAME ON</h1>}
           </div>
           : <h1 id='winnerTag' style={{ left: "40%" }}>Enter Players Name</h1>}
-        <button onClick={this.handleRestart}>New Game</button>
+        <button id='restartButton' onClick={this.handleRestart}>New Game</button>
       </div>
     );
   }

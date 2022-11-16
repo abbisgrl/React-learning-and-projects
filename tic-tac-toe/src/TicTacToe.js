@@ -8,7 +8,7 @@ class TicTacToe extends React.Component {
             this.props.handleRecord('X', row, cellNo);
         } else {
             e.currentTarget.innerHTML = '0'
-            e.currentTarget.classList.add('cross');
+            e.currentTarget.classList.add('circle');
             this.props.handleRecord('0', row, cellNo);
         }
     }
