@@ -3,7 +3,6 @@
 //React does not know how to render the boolean,undefined,null,obj,array of javascript through jsx
 //Class component have lifecycle method and it have state .On the other hand function component does not have lifecycle methods and state system.But now using hooks ,we can used all the methods of class component in function component
 
-const { useRef } = require("react");
 
 
 //component life cycle methods
@@ -145,6 +144,8 @@ const { useRef } = require("react");
 // const inputRef = useRef()
 // give the ref value to the any element for which you want to manupulate directly
 
+// 6.Custom hook is a way of creating a hook which consist of a code which is usable to many component.It consists of many small different function
 //Important point to note
 //1.We have to create any function in function component with any declaration keyword
 
+//React router

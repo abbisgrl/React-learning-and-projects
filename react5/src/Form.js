@@ -7,6 +7,7 @@ class Form extends React.Component {
             task: '',
             date: '',
         }
+        
     }
 
     handleForm = (e) => {
