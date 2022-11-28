@@ -1,7 +1,8 @@
 import React from "react";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-
+import { connect } from 'react-redux'
+import { editTask } from './actions'
 class EditPop extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +13,7 @@ class EditPop extends React.Component {
     }
     editSubmit = (e) => {
         e.preventDefault();
-        this.props.edit(this.props.index, this.state.task, this.state.date)
+        this.props.editTask({ index: this.props.index, task: this.state.task, date: this.state.date })
     }
     render() {
         return (
@@ -29,5 +30,5 @@ class EditPop extends React.Component {
         )
     }
 }
-
-export default EditPop;
+const mapStateToProps = null;
+export default connect(mapStateToProps, { editTask })(EditPop)

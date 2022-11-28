@@ -1,5 +1,6 @@
 import React from "react";
-
+import { connect } from 'react-redux';
+import { addTask } from './actions'
 class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -7,7 +8,7 @@ class Form extends React.Component {
             task: '',
             date: '',
         }
-        
+
     }
 
     handleForm = (e) => {
@@ -33,5 +34,5 @@ class Form extends React.Component {
         )
     }
 }
-
-export default Form;
+const mapStateToProps = null;
+export default connect(mapStateToProps, { addTask })(Form)
